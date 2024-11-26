@@ -26,8 +26,8 @@ namespace StockApp.Infra.IoC
             services.AddScoped<IProductRepository, ProductRepository>();
             services.AddScoped<IProductService, ProductService>();
             services.AddScoped<ICategoryService, CategoryService>();
-            // Registrar TaxService como um singleton
             services.AddSingleton<ITaxService, TaxService>();
+            services.AddSingleton<IDiscountService, DiscountService>();
 
             services.AddAutoMapper(typeof(DomainToDTOMappingProfile));
 
