@@ -2,6 +2,7 @@
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using StockApp.API;
 using StockApp.Application.Interfaces;
 using StockApp.Application.Mappings;
 using StockApp.Application.Services;
@@ -25,6 +26,8 @@ namespace StockApp.Infra.IoC
             services.AddScoped<IProductRepository, ProductRepository>();
             services.AddScoped<IProductService, ProductService>();
             services.AddScoped<ICategoryService, CategoryService>();
+            // Registrar TaxService como um singleton
+            services.AddSingleton<ITaxService, TaxService>();
 
             services.AddAutoMapper(typeof(DomainToDTOMappingProfile));
 

@@ -1,3 +1,4 @@
+using StockApp.API;
 using StockApp.Infra.IoC;
 
 internal class Program
@@ -13,6 +14,7 @@ internal class Program
                 options.LoginPath = "/api/auth/login"; // Rota para redirecionar em caso de login necessário
                 options.AccessDeniedPath = "/api/auth/denied";
             });
+
 
         // Adiciona autorização com política baseada em claims
         builder.Services.AddAuthorization(options =>
